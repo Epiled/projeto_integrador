@@ -11,6 +11,17 @@ Antes de rodar o projeto, você precisa ter as seguintes ferramentas instaladas:
 - Django 3.x ou superior
 - Virtualenv (opcional, mas recomendado para criar ambientes isolados)
 
+## Usuário Padrão
+
+O projeto possui um usuário padrão para facilitar o acesso inicial. O usuário foi configurado com o nome `felipe` e a senha `12345`.
+
+### Credenciais para Acesso
+
+- **Usuário**: felipe
+- **Senha**: 12345
+
+Essas credenciais podem ser usadas para fazer login no painel administrativo do Django, acessando o seguinte URL:
+
 ## Configuração do Ambiente
 
 1. **Clone o repositório:**
