@@ -22,6 +22,16 @@ O projeto possui um usuário padrão para facilitar o acesso inicial. O usuário
 
 Essas credenciais podem ser usadas para fazer login no painel administrativo do Django, acessando o seguinte URL:
 
+<http://127.0.0.1:8000/admin/>
+
+Caso deseje criar outros usuários, você pode fazê-lo diretamente pelo painel ou utilizando o comando:
+
+```bash
+python manage.py createsuperuser
+```
+
+Com isso, você poderá criar um novo superusuário para gerenciar o projeto.
+
 ## Configuração do Ambiente
 
 1. **Clone o repositório:**
