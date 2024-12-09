@@ -1,0 +1,87 @@
+{% extends "base.html" %} {% block content %} {% if user.is_authenticated %}
+
+<div class="container mt-3 mb-3">
+  <div class="d-flex flex-row justify-content-between align-items-center">
+    <h1 class="m-0">Bem-vindo, {{ user.first_name }}!</h1>
+
+    <form action="{% url 'admin:logout' %}?next=/" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">
+        <i class="bi-box-arrow-right"></i> Sair
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr />
+
+<div class="container">
+  <div class="mb-3 d-flex flex-row justify-content-between align-items-center">
+    <h2 class="m-0">Lista de produtos</h2>
+
+    <button
+      class="btn btn-primary"
+      onClick="window.location.href = '/product/add/'"
+    >
+      <i class="bi bi-plus-circle"></i> Inserir Produto Novo
+    </button>
+  </div>
+  <table class="table table-info table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Produto</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for produto in object_list %}
+
+      <tr class="align-middle">
+        <th scope="row">{{ produto.id }}</th>
+        <td>{{ produto.nome }}</td>
+        <td>R$ {{ produto.valor }}</td>
+        <td class="d-flex flex-wrap gap-2">
+          <a
+            href="{% url 'product-details' produto.pk %}"
+            class="btn btn-info btn-sm"
+          >
+            <i class="bi bi-eye-fill"></i> Detalhes
+          </a>
+          <a
+            href="{% url 'product-update' produto.pk %}"
+            class="btn btn-warning btn-sm"
+          >
+            <i class="bi bi-pencil-square"></i> Editar
+          </a>
+          <a
+            href="{% url 'product-delete' produto.pk %}"
+            class="btn btn-danger btn-sm"
+          >
+            <i class="bi bi-trash3-fill"></i> Excluir
+          </a>
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% else %}
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="text-center">
+    <h1 class="text-danger">
+      <i class="bi bi-exclamation-circle-fill"></i> Acesso Negado
+    </h1>
+    <p class="m-0">
+      Por favor, efetue o
+      <a href="{% url 'admin:login' %}?next=/" class="text-primary">login</a>
+      para acessar.
+    </p>
+  </div>
+</div>
+
+{% endif %} {% endblock %}
