@@ -87,6 +87,7 @@ Antes de rodar o projeto, você precisa ter as seguintes ferramentas instaladas:
 
 Aqui está uma visão geral da estrutura de diretórios do projeto:
 
+```bash
 /projeto_integrador
 │
 ├── manage.py # Script principal para rodar o projeto
@@ -123,6 +124,7 @@ Aqui está uma visão geral da estrutura de diretórios do projeto:
 │ └── custom_tags.py
 │
 └── requirements.txt # Dependências do projeto
+```
 
 ### Funcionalidades
 
