@@ -39,8 +39,8 @@ Com isso, você poderá criar um novo superusuário para gerenciar o projeto.
    Primeiro, faça o clone do repositório para a sua máquina local:
 
    ```bash
-   git clone https://seu-repositorio-url.git
-   cd nome-do-repositorio
+   git clone https://projeto_integrador.git
+   cd projeto_integrador
    ```
 
 2. **Crie e ative um ambiente virtual (opcional, mas recomendado):**
